@@ -7,6 +7,20 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
+	<!-- remote distribution repository config -->
+	<distributionManagement>
+		<repository>
+			<id>deploymentRepo-release</id>
+			<name>deploymentRepo-release</name>
+			<url>http://192.168.1.234:8080/nexus/content/repositories/deploymentRepo-release/</url>
+		</repository>
+		<snapshotRepository>
+			<id>deploymentRepo-snapshot</id>
+			<name>deploymentRepo-snapshot</name>
+			<url>http://192.168.1.234:8080/nexus/content/repositories/deploymentRepo-snapshot/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<properties>
 		<spring.version>3.2.6.RELEASE</spring.version>
 	</properties>
@@ -72,17 +86,17 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
-			<version>3.1.4.RELEASE</version>
+			<version>3.2.0.M1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
-			<version>3.1.4.RELEASE</version>
+			<version>3.2.0.M1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
-			<version>3.1.4.RELEASE</version>
+			<version>3.2.0.M1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -110,19 +124,18 @@
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>0.9.30</version>
+			<version>1.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
-			<version>0.9.30</version>
+			<version>1.1.1</version>
 		</dependency>
 		<!-- CGLib for @Configuration  -->
 		<dependency>
 			<groupId>cglib</groupId>
-			<artifactId>cglib-nodep</artifactId>
-			<version>2.2.2</version>
-			<scope>runtime</scope>
+			<artifactId>cglib</artifactId>
+			<version>3.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -264,16 +277,12 @@
 		<dependency>
 			<groupId>IKAnalyzer2012_u6</groupId>
 			<artifactId>IKAnalyzer2012_u6</artifactId>
-			<version>1.0</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/IKAnalyzer2012_u6.jar</systemPath>
+			<version>2012_u6</version>
 		</dependency>
 		<dependency>
 			<groupId>memcachedclient</groupId>
 			<artifactId>memcachedclient</artifactId>
 			<version>2.0.1</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/memcachedclient-2.0.1.jar</systemPath>
 		</dependency>
 	</dependencies>
 	<build>
